@@ -31,7 +31,7 @@ class SessionController extends Controller
         if(Auth::attempt($infologin)) {
             return redirect('/dash')->with('success','Berhasil Login');
         }else {
-            return redirect()->route('login')->with(['login' => 'login gagal']);
+            return redirect()->route('login')->with(['login' => 'Username atau password salah!']);
         };
     }
 

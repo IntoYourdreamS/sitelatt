@@ -31,9 +31,9 @@
                 <span class="fas fa-clipboard-list"></span>
                 <p>Dashboard</p>
             </div></a>
-            <a href="{{ url('tambah') }}"><div class="sidebar-menu">
+            <a href="{{ url('admin') }}"><div class="sidebar-menu">
                 <span class="fas fa-user"></span>
-                <p class="admin">Tambah Admin</p>
+                <p class="admin">Admin</p>
             </div></a>
         </div>
     @show

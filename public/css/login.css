@@ -51,7 +51,7 @@ i {
     justify-content: center;
     align-items: center;
     position: relative;
-    background-color: rgb(187, 187, 187);
+    background-color: white;
 }
 .input-box {
     width: 330px;

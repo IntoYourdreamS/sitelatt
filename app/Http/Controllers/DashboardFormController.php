@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\form;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Mailables\Content;
 
@@ -15,62 +16,12 @@ class DashboardFormController extends Controller
      */
     public function index(Request $request)
     {
-        $perPage = $request->input('perPage', 5);
+            $perPage = $request->input('perPage', 25);
 
-        $data = form::orderBy('id','desc')->paginate($perPage);
+            $data = form::orderBy('id','desc')->paginate($perPage);
+        // $data = form::all();
         
         return view('dashboardd', compact('data'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\form  $form
-     * @return \Illuminate\Http\Response
-     */
-    public function show(form $form)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\form  $form
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(form $form)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\form  $form
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, form $form)
-    {
-        //
     }
 
     /**
@@ -79,8 +30,21 @@ class DashboardFormController extends Controller
      * @param  \App\Models\form  $form
      * @return \Illuminate\Http\Response
      */
-    public function destroy(form $form)
+    public function hapus($id)
     {
-        //
+        $data = Form::findOrFail($id);
+        $data->delete();
+        return redirect()->route('dash');
+    }
+    public function admin()
+    {
+        $data = User::all();
+        return view('admin', compact('data'));
+    }
+    public function hapusAdmin($id)
+    {
+        $data = User::findOrFail($id);
+        $data->delete();
+        return redirect()->route('admin');
     }
 }

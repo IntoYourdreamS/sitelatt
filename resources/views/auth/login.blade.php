@@ -25,8 +25,8 @@
                             <header>Login</header>
                             @csrf
                             <div class="input-field">
-                                <input type="text" class="input" id="email" required="" autocomplete="off" name="email" value="{{ Session::get('email') }}">
-                                <label for="email">Email</label>
+                                <input type="text" class="input" id="Username" required="" autocomplete="off" name="email" value="{{ Session::get('email') }}">
+                                <label for="Username">Username</label>
                             </div>
                             <div class="input-field">
                                 <input type="password" class="input" id="pass" required="" name="password">

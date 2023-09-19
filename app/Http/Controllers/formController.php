@@ -32,6 +32,6 @@ class formController extends Controller
         $data->alasan = $request->alasan;
         $data->jumlah_terlambat = 1;
         $data->save();
-        return redirect()->route('form');
+        return redirect()->route('afterinput');
     }
 }
