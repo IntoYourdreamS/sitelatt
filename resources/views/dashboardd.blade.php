@@ -3,26 +3,26 @@
 @section('sidebar')
 @stop
 @section('content')
-    <div class="card total1">
-        <div class="info">
+    <div class="cardd total1">
+        <div class="infoo">
             <h2>Total Entry </h2>
-            <p>{{ $data->total() }}</p>
+            <span style="font-size:26">{{ $data->total() }}</span>
         </div>
     </div>
-    <div class="card total2">
-        <div class="info">
+    <div class="cardd total2">
+        <div class="infoo">
             <h2>Tanggal Sekarang</h2>
             <span style="font-size:24">{{ date('j/m/Y') }}</span>
         </div>
     </div>
-    <div class="card total3">
-        <div class="info">
+    <div class="cardd total3">
+        <div class="infoo">
             <h2>Jam Sekarang</h2>
             <span id="jam" style="font-size:24"></span>
         </div>
     </div>
-    {{-- 2 card bottom --}}
-    <div class="card detail">
+    {{-- 2 cardd bottom --}}
+    <div class="cardd detail">
         <div class="detail-header">
             <h2>Entry Siswa Terlambat</h2>
         </div>
@@ -31,7 +31,6 @@
                 <th>Id</th>
                 <th>Nama</th>
                 <th>Kelas</th>
-                <th>jumlah_terlambat</th>
                 <th>Alasan</th>
                 <th>Tanggal</th>
                 <th>Action</th>
@@ -41,7 +40,6 @@
                     <td>{{ $index + 1 }}</td>
                     <td>{{ $item['nama_siswa'] }}</td>
                     <td>{{ $item['kelas'] }}</td>
-                    <td>{{ $item['jumlah_terlambat'] }}</td>
                     <td>{{ $item['alasan'] }}</td>
                     <td>{{ $item['created_at'] }}</td>
                     <td><a href="/hapus/{{ $item['id'] }}"><button class="button-4" role="button"

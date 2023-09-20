@@ -3,7 +3,7 @@
 @section('sidebar')
 @stop
 @section('content')
-<div class="card detail">
+<div class="cardd detail">
     <div class="detail-header">
         <h2>Daftar Admin</h2>
     </div>
